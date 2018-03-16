@@ -1,3 +1,10 @@
 export default {
-  menus:[],
+  menus: [],
+  pingpais: [],
+  bigImgs: [],
+  iconImgs:[],
+  lunBos:[],
+  goodImgs:[]
+
 }
+

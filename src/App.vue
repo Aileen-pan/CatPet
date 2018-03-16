@@ -11,9 +11,7 @@
     components:{
       FooterGuide
     },
-    created(){
-      this.$store.dispatch('getMenus')
-    }
+
   }
 </script>
 
