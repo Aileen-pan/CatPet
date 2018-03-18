@@ -3,6 +3,10 @@ import App from './App'
 import router from './router'
 import './mock/datas'
 import store from './store'
+import VueLazyload from 'vue-lazyload'
+  Vue.use(VueLazyload, {
+    loading:require('./common/img/default-epet.jpg')
+})
 
 /* eslint-disable no-new */
 new Vue({

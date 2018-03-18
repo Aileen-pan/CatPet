@@ -4,7 +4,12 @@ export default {
   bigImgs: [],
   iconImgs:[],
   lunBos:[],
-  goodImgs:[]
+  goodImgs:[],
+
+  name:[],
+  bigLists:[],
+  brandNames:[]
+
 
 }
 

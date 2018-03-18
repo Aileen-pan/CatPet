@@ -3,7 +3,7 @@
     <span class="guide_item_msite" :class="{on: $route.path==='/msite'}" @click="goto('/msite')">
       <a href="#" class="iconfont icon-waimai"></a>
     </span>
-    <span class="guide_item_class" :class="{on: $route.path==='/class'}" @click="goto('/class')">
+    <span class="guide_item_class" :class="{on: $route.path==='/class' || $route.path==='/class/classify' || $route.path==='/class/brand'}" @click="goto('/class')">
         <a href="#" class="iconfont icon-search"></a>
     </span>
     <span class="guide_item_shopping" :class="{on: $route.path==='/shopping'}" @click="goto('/shopping')">

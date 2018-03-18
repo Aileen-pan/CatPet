@@ -1,7 +1,7 @@
 <template>
   <div class="msite">
-    <div class="cat">
-    </div>
+    <a class="cat">
+    </a>
     <!--广告-->
     <!--<div class="msite_header" v-show="isShow">
       <img id="moveimg" src="https://img2.epetbar.com/nowater/2017-12/13/18/c63b6e6cf483cbb61196f658920a9d6e.jpg@!water" alt="">
@@ -75,12 +75,12 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide" v-for="(goodImg , index) in goodImgs" :key="index">
                 <a href="#">
-                  <img src="https://img1.epetbar.com/2015-11/16/16/b56724def1ab1adc3bc1425ae5f3b0c3.jpg?x-oss-process=style/fill&$1=300&$2=300" alt="">
+                  <img :src="goodImg.image" alt="">
                 </a>
-                <p class="swiper_slide_p1">￥1.8</p>
-                <p class="swiper_slide_p2">省16.2</p>
+                <p class="swiper_slide_p1">{{goodImg.sale_price}}</p>
+                <p class="swiper_slide_p2">{{goodImg.little_price}}</p>
               </div>
-              <div class="swiper-slide">
+      <!--        <div class="swiper-slide">
                 <a href="#">
                   <img src="https://img1.epetbar.com/2016-03/10/10/604e4cab9b96e71679923f35c1408590.jpg?x-oss-process=style/fill&$1=300&$2=300" alt="">
                 </a>
@@ -107,7 +107,7 @@
                 </a>
                 <p class="swiper_slide_p1">￥1.8</p>
                 <p class="swiper_slide_p2">省16.2</p>
-              </div>
+              </div>-->
             </div>
           </div>
         </div>
@@ -183,10 +183,20 @@
       ...mapState(['menus' , 'bigImgs' , 'iconImgs' , 'lunBos' , 'goodImgs']),
 
     },
+    watch:{
+      goodImgs(){
+        this.$nextTick(()=>{
+          //轮播
+          let swiper2 = new Swiper('.swiper-container', {
+            slidesPerView : 3.5,
+            preventClicks:false,
+          })
+        })
+      }
+
+    },
     mounted() {
-      let swiper2 = new Swiper('.swiper-container', {
-        slidesPerView : 3.5,
-      })
+
 
       //滑动
       if(!this.scroll){
@@ -327,10 +337,10 @@ li
 .wrapper
   height 100%
   padding-top 89px
-  padding-bottom 50px
+  padding-bottom 100px
   box-sizing border-box
 .content
-  padding-bottom 140px
+  padding-bottom 50px
 .time_top
   width 100%
   box-sizing border-box

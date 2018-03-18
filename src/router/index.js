@@ -8,6 +8,8 @@ import Msite from '../pages/Msite/Msite.vue'
 import Class from '../pages/Class/Class'
 import Shopping from '../pages/Shopping/Shopping'
 import Me from '../pages/Me/Me'
+import Classify from '../pages/Class/Classify/Classify'
+import Brand from '../pages/Class/Brand/Brand'
 
 Vue.use(VueRouter)
 
@@ -20,6 +22,21 @@ export default new VueRouter({
     {
       path: '/class',
       component: Class,
+      children:[
+        {
+          path: 'brand',
+          component: Brand,
+        },
+        {
+          path: 'classify',
+          component: Classify,
+        },
+        {
+          path: '/',
+          redirect: 'classify'
+        },
+      ]
+
     },
     {
       path: '/shopping',
@@ -29,6 +46,7 @@ export default new VueRouter({
       path: '/me',
       component: Me,
     },
+
     {
       path: '/',
       redirect: '/msite'
