@@ -9,7 +9,7 @@
     <span class="guide_item_shopping" :class="{on: $route.path==='/shopping'}" @click="goto('/shopping')">
         <a href="#" class="iconfont icon-dingdan"></a>
     </span>
-    <span class="guide_item_me" :class="{on: $route.path==='/me'}" @click="goto('/me')">
+    <span class="guide_item_me" :class="{on: $route.path==='/me' || $route.path==='/me/login' || $route.path==='/me/phone'}" @click="goto('/me')">
         <a href="#" class="iconfont icon-geren"></a>
     </span>
   </div>

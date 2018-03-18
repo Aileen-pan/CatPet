@@ -10,6 +10,8 @@ import Shopping from '../pages/Shopping/Shopping'
 import Me from '../pages/Me/Me'
 import Classify from '../pages/Class/Classify/Classify'
 import Brand from '../pages/Class/Brand/Brand'
+import Login from '../pages/Me/Login/Login'
+import Phone from '../pages/Me/Phone/Phone'
 
 Vue.use(VueRouter)
 
@@ -45,6 +47,20 @@ export default new VueRouter({
     {
       path: '/me',
       component: Me,
+      children:[
+        {
+          path: 'phone',
+          component: Phone,
+        },
+        {
+          path: 'login',
+          component: Login,
+        },
+        {
+          path: '/',
+          redirect: 'login'
+        },
+      ]
     },
 
     {
